@@ -1,0 +1,111 @@
+:root {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --border-color: #333;
+    --primary-color: #bb86fc;
+    --primary-hover: #9c67eb;
+    --highlight-color: #03dac6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--container-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.drop-area {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 3rem 1rem;
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.drop-area.active {
+    border-color: var(--primary-color);
+    background-color: rgba(187, 134, 252, 0.1);
+}
+
+.upload-btn {
+    background-color: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: var(--highlight-color);
+}
+
+#result-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.image-preview-container {
+    margin-bottom: 1.5rem;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.result-text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#class-name {
+    color: var(--primary-color);
+}
+
+#confidence-score {
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+}
