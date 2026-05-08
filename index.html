@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 분류기</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <!-- Load Teachable Machine Image Model -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>이미지 분류</h1>
+        <p>목탄화 또는 유화 이미지를 올려주세요.</p>
+
+        <div id="drop-area" class="drop-area">
+            <p>여기로 이미지를 드래그 앤 드롭하거나<br>아래 버튼을 눌러 파일을 선택하세요.</p>
+            <input type="file" id="file-input" accept="image/*" hidden>
+            <button class="upload-btn" onclick="document.getElementById('file-input').click()">파일 선택</button>
+        </div>
+
+        <div id="loading" class="hidden">모델 로딩 중...</div>
+
+        <div id="result-container" class="hidden">
+            <div class="image-preview-container">
+                <img id="image-preview" src="" alt="미리보기">
+            </div>
+            <div id="classification-result" class="result-text">
+                <span id="class-name"></span>
+                <span id="confidence-score"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
